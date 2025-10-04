@@ -17,12 +17,12 @@ body {
 .grid-items {
     box-sizing: border-box;
     border: 1px solid #9198a1;
-    width: 16px;
-    height: 16px;
+    /* width: 16px;
+    height: 16px; */
     margin: 0px;
 }
 
-#main-container{
+.container{
     margin-bottom: 75px;
 }
 
@@ -31,7 +31,7 @@ body {
 } */
 
 .grid-container{
-   
+   /* border: 1px solid red; */
     display: flex;
     justify-content: flex-start;
     align-items: center;

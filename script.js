@@ -58,20 +58,24 @@ btnGenerateGrid.addEventListener(
 
 function createGrids2(userInput){
     let gridNumber = userInput * userInput
-    if (userInput > 100){ return createGrids2(prompt("Please enter a number below 100", Number(16))) }
+    if (userInput > 100){ return createGrids2(prompt("Please enter a number below or equal to 100", Number(16))) }
     else {
     // let gridContainer = document.querySelector("#main-grid-container")
     for(let i = 1; i <= gridNumber; i++){
         const createGrid = document.createElement("div")
         createGrid.classList.add("grid-items")
         gridContainer.append(createGrid)
-        gridContainer.style.cssText = `width: ${userInput * 16}px; height: ${userInput * 16}px;`
+        gridContainer.style.cssText = `width: 400px; height: 400px;`
        // gridContainer.style.border = "1px solid rgba(255, 195, 45, 1)"
+       const gridItems = document.querySelectorAll(".grid-items");
+    gridItems.forEach(
+    i => i.style.cssText = ` width: ${100 / userInput}%; height: ${100 / userInput}%`
+)
          
     } }
 }
-
-// createGrids2(16)
+  
+// createGrids2(16)  
 
 /* gridItems2.forEach(
     i => i.addEventListener(
