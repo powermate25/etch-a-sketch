@@ -109,7 +109,7 @@ function createGrids2(userInput){
     } }
 }
  
-// createGrids2(16)   
+// git pcreateGrids2(16)   
 
 /* gridItems2.forEach(
     i => i.addEventListener(
