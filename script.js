@@ -75,7 +75,7 @@ function createGrids2(userInput){
     } }
 }
   
-// createGrids2(16)  
+// createGrids2(16)   
 
 /* gridItems2.forEach(
     i => i.addEventListener(
