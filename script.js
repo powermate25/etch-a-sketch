@@ -20,5 +20,16 @@ function createGrids(gridNumber){
         
     }
 }
-const gridItem = 
-console.log(createGrids(256))   
+createGrids(256)
+
+const gridItem = document.querySelectorAll(".grid-items");
+
+console.log(gridItem) 
+
+gridItem.forEach(
+    i => i.addEventListener(
+    "mouseenter", () => {
+        i.style.backgroundColor = "rgb(45, 196, 255)";
+    }
+) 
+) 
