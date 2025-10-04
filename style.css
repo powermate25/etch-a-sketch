@@ -49,6 +49,10 @@ body {
 
 
  #btn-generate-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
   background-color: #405cf5;
   border-radius: 6px;
   border-width: 0;
