@@ -12,10 +12,11 @@ createGrids(16)
 const gridItems = document.querySelectorAll(".grid-items");
 gridItems.forEach(
     i => i.addEventListener(
-    "mouseenter", () => {
-        i.style.backgroundColor = "yellow" 
-    } 
-) )
+    "pointerenter", (e) => {
+        i.style.backgroundColor = "yellow"
+        i.addEventListener("pointerdown", () => i.releasePointerCapture(e.pointerId) )    
+    }
+))
 /// Above are default grid settings for first time visitor with 16 x 16 grid
 
 
@@ -38,8 +39,9 @@ btnGenerateGrid.addEventListener(
         // step 5: add event lister to each grid item using for each loop
         gridItems.forEach(
     i => i.addEventListener(
-    "mouseenter", () => {
+    "pointerenter", () => {
         i.style.backgroundColor = "yellow"
+        i.addEventListener("pointerdown", (e) => {e.target.releasePointerCapture(e.pointerId)})
     }) ) 
 }
 );
@@ -65,8 +67,9 @@ btnGenerateGridRandomColor.addEventListener(
         // step 5: add event lister to each grid item using for each loop
         gridItems.forEach(
     i => i.addEventListener(
-    "mouseenter", () => {
-        i.style.backgroundColor = `rgb( ${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)})` 
+    "pointerenter", (e) => {
+        i.style.backgroundColor = `rgb( ${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)})`
+        i.addEventListener("pointerdown", () => i.releasePointerCapture(e.pointerId) )
      }
     ) ) 
 }
@@ -89,5 +92,4 @@ function createGrids(userInput){
          
     } }
 }
- 
-// console.log( `rgb(${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)}, 0)` )
+
