@@ -4,20 +4,27 @@ console.log("hello World")
 
 const mainContainer = document.querySelector("#main-container")
 const newDiv = document.createElement("div")
+/* newDiv.innerText = "Check This"
+mainContainer.append(newDiv) */
 
 gridContainer = document.querySelector("#main-grid-container")
+/* newGrid = document.createElement("div")
+newGrid.textContent = "test new Grid" */
 
-/// First page load default grid settings
-createGrids(16)
+
+function createGrids(gridNumber){
+    for(let i = 1; i <= gridNumber; i++){
+        const createGrid = document.createElement("div")
+        createGrid.classList.add("grid-items")
+        gridContainer.append(createGrid)
+        
+    }
+}
+// createGrids(256)
+
 const gridItems = document.querySelectorAll(".grid-items");
-gridItems.forEach(
-    i => i.addEventListener(
-    "mouseenter", () => {
-        i.style.backgroundColor = "yellow" 
-    } 
-) )
-/// Above are default grid settings for first time visitor with 16 x 16 grid
 
+// console.log(gridItems) 
 
 
 const btnGenerateGrid = document.querySelector("#btn-generate-grid")
@@ -29,32 +36,6 @@ btnGenerateGrid.addEventListener(
         // step 2: initialize container (clear old divs) 
         gridContainer.replaceChildren("")
         
-        // step 3: execute createGrids function with user configuration and add general class to new created divs
-        createGrids2(prompt("How many grid per line?", Number(16)))
-
-        // Step 4: indexing new divs by class created above 
-        const gridItems = document.querySelectorAll(".grid-items")
- 
-        // step 5: add event lister to each grid item using for each loop
-        gridItems.forEach(
-    i => i.addEventListener(
-    "mouseenter", () => {
-        i.style.backgroundColor = "yellow"
-    }) ) 
-}
-);
-
-
-// random grid color generator
-
-const btnGenerateGridRandomColor = document.querySelector("#btn-generate-grid2")
-btnGenerateGridRandomColor.addEventListener(
-    "click", () => {
-        // step 1: select grid container
-        const gridContainer = document.querySelector("#main-grid-container")
-
-        // step 2: initialize container (clear old divs) 
-        gridContainer.replaceChildren("")
 
         // step 3: execute createGrids function with user configuration and add general class to new created divs
         createGrids2(prompt("How many grid per line?", Number(16)))
@@ -66,13 +47,51 @@ btnGenerateGridRandomColor.addEventListener(
         gridItems.forEach(
     i => i.addEventListener(
     "mouseenter", () => {
-        i.style.backgroundColor = `rgb( ${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)})` 
-     }
-    ) ) 
-}
+        i.style.backgroundColor = "yellow"
+    }
+) ) 
+
+} 
 );
 
-function createGrids(userInput){
+
+// random color generator
+
+const btnGenerateGridRandomColor = document.querySelector("#btn-generate-grid2")
+btnGenerateGridRandomColor.addEventListener(
+    "click", () => {
+        // step 1: select grid container
+        const gridContainer = document.querySelector("#main-grid-container")
+
+        // step 2: initialize container (clear old divs) 
+        gridContainer.replaceChildren("")
+        
+
+        // step 3: execute createGrids function with user configuration and add general class to new created divs
+        createGrids2(prompt("How many grid per line?", Number(16)))
+
+        // Step 4: indexing new divs by class created above 
+        const gridItems = document.querySelectorAll(".grid-items")
+        
+        // step 5: add event lister to each grid item using for each loop
+        gridItems.forEach(
+    i => i.addEventListener(
+    "mouseenter", () => {
+        i.style.backgroundColor = `#${Math.floor(Math.random()*1000000)}` 
+       for (let x = 0; x <= 10; x++){
+        let newColor = Math.floor(Math.random()*100000)
+        let currentColor = newColor
+        i.addEventListener("mouseenter", () => { i.style.backgroundColor = `#${newColor}` })
+        }
+    }
+) )
+
+} 
+);
+
+// ${Math.floor(Math.random()*100000)}
+
+function createGrids2(userInput){
     let gridNumber = userInput * userInput
     if (userInput > 100){ return createGrids2(prompt("Please enter a number below or equal to 100", Number(16))) }
     else {
@@ -90,4 +109,35 @@ function createGrids(userInput){
     } }
 }
  
-// console.log( `rgb(${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)}, 0)` )
+// git pcreateGrids2(16)   
+
+/* gridItems2.forEach(
+    i => i.addEventListener(
+    "mouseenter", () => {
+        i.style.backgroundColor = "rgb(45, 196, 255)"
+        i.style.cssText = " width: ; height: ;"
+    }
+) ) */
+let current = Math.floor(Math.random()*100000)
+    console.log(
+        current,
+        current,
+        current,
+        current,
+        current, 
+    )
+    
+    
+/* gridItems.forEach(
+    i => i.addEventListener(
+    "mouseenter", () => {
+        i.style.backgroundColor = "yellow"
+       for (let x = 0; x <= 10; x++){
+        let newColor = Math.floor(Math.random()*100000)
+        let currentColor = newColor
+        if(i.style.backgroundColor = `yellow`) {
+        i.addEventListener("mouseenter", () => { i.style.backgroundColor = `#${currentColor}` })
+        }
+        }
+    }
+) )  */
