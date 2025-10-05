@@ -31,7 +31,7 @@ btnGenerateGrid.addEventListener(
         gridContainer.replaceChildren("")
         
         // step 3: execute createGrids function with user configuration and add general class to new created divs
-        createGrids(prompt("How many grid per line?", Number(16)))
+        createGrids(prompt("How many squares per line?", Number(16)))
 
         // Step 4: indexing new divs by class created above 
         const gridItems = document.querySelectorAll(".grid-items")
@@ -59,7 +59,7 @@ btnGenerateGridRandomColor.addEventListener(
         gridContainer.replaceChildren("")
 
         // step 3: execute createGrids function with user configuration and add general class to new created divs
-        createGrids(prompt("How many grid per line?", Number(16)))
+        createGrids(prompt("How many squares per line?", Number(16)))
 
         // Step 4: indexing new divs by class created above 
         const gridItems = document.querySelectorAll(".grid-items")
