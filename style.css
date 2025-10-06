@@ -74,6 +74,27 @@ body {
   text-align: center;
 }
 
+#btn-reset-grid {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5em;
+  background-color: #405bf500;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #bac0c9;
+  cursor: pointer;
+  font-family: 'poppins', 'Courier New', Courier, monospace;
+  font-size: 75%;
+  font-style:oblique;
+  height: 20px;
+  width: 100px;
+  margin: 5px 12px 12px 312px;
+  text-align: center;
+}
+
 #btn-generate-grid:disabled {
   cursor: default;
 }

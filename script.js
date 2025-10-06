@@ -93,3 +93,12 @@ function createGrids(userInput){
     } }
 }
 
+const resetBtn = document.querySelector("#btn-reset-grid")
+resetBtn.addEventListener(
+    "click", () => {
+        const gridItems = document.querySelectorAll(".grid-items");
+    gridItems.forEach(
+    i => i.style.backgroundColor = ""
+)
+    }
+)
