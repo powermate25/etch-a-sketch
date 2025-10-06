@@ -90,9 +90,10 @@ body {
   font-size: 75%;
   font-style:oblique;
   height: 20px;
-  width: 100px;
-  margin: 5px 12px 12px 312px;
+  width: 93px;
+  margin: 9px 12px 12px 318px;
   text-align: center;
+  border: 1px solid #405cf5; 
 }
 
 #btn-generate-grid:disabled {
